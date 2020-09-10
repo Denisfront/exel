@@ -7,6 +7,9 @@
   },
   "rules": {
     "semi": "off",
+    "object-curly-spacing": "off",
+    "max-len": "off",
+    "operator-linebreak": "off",
     "comma-dangle": "off",
     "arrow-parens": "off",
     "require-jsdoc": "off"
