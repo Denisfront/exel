@@ -6,8 +6,8 @@ export function resizingHandler(event, $root) {
   const coords = $parent.getCoords()
   const type = event.target.dataset.resize
 
-  if (type === 'col') $resizer.classListAdd('line-col')
-  else $resizer.classListAdd('line-row')
+  if (type === 'col') $resizer.addClass('line-col')
+  else $resizer.addClass('line-row')
 
   let value
   document.onmousemove = e => {
@@ -34,11 +34,12 @@ export function resizingHandler(event, $root) {
       })
       $root.findAll(`[data-col="${$parent.data.col}"]`)
           .forEach(el => el.style.width = value + 'px')
-      $resizer.classListRemove('line-row')
+      $resizer.removeClass('line-col')
       $resizer.css({
         right: 0 + 'px'
       })
     } else {
+      $resizer.removeClass('line-row')
       $parent.css({
         height: value + 'px'
       })
